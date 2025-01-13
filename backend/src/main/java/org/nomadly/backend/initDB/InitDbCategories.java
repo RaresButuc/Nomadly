@@ -3,6 +3,7 @@ package org.nomadly.backend.initDB;
 import com.journalistjunction.model.Category;
 import com.journalistjunction.repository.CategoryRepository;
 import lombok.AllArgsConstructor;
+import org.nomadly.backend.model.Category;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

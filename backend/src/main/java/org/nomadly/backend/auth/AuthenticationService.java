@@ -1,12 +1,12 @@
 package org.nomadly.backend.auth;
 
-import com.journalistjunction.enums.Role;
 import com.journalistjunction.model.User;
 import com.journalistjunction.repository.UserRepository;
-import com.journalistjunction.security.JwtService;
 import jakarta.persistence.EntityExistsException;
 import lombok.RequiredArgsConstructor;
 import org.nomadly.backend.enums.Role;
+import org.nomadly.backend.model.User;
+import org.nomadly.backend.security.JwtService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,9 +30,9 @@ public class AuthenticationService {
                     .email(request.getEmail())
                     .password(passwordEncoder.encode(request.getPassword()))
                     .phoneNumber(request.getPhoneNumber())
-                    .location(request.getLocation())
+                    .bornIn(request.getBornIn())
+                    .currentlyIn(request.getCurrentlyIn())
                     .shortAutoDescription(request.getShortAutoDescription())
-                    .socialMedia(request.getSocialMedia())
                     .build();
             repository.save(user);
 

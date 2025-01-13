@@ -1,12 +1,11 @@
 package org.nomadly.backend.auth;
 
-import com.journalistjunction.enums.Role;
-import com.journalistjunction.model.Location;
-import com.journalistjunction.model.SocialMedia;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.nomadly.backend.enums.Role;
+import org.nomadly.backend.model.Location;
 
 @Data
 @Builder
