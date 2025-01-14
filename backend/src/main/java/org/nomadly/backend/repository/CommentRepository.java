@@ -1,6 +1,6 @@
 package org.nomadly.backend.repository;
 
-import org.nomadly.backend.model.Comment;
+import org.nomadly.backend.model.CommentClasses.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

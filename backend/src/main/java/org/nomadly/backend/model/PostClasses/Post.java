@@ -3,7 +3,7 @@ package org.nomadly.backend.model.PostClasses;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
-import org.nomadly.backend.model.Comment;
+import org.nomadly.backend.model.CommentClasses.Comment;
 import org.nomadly.backend.model.Location;
 import org.nomadly.backend.model.User;
 
@@ -28,10 +28,6 @@ public class Post {
     @ManyToOne
     @JoinColumn
     private User owner;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "article")
-    private List<Comment> comments;
 
     private Long commentsCount;
 

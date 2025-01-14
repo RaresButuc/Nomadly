@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.nomadly.backend.enums.Role;
+import org.nomadly.backend.model.CommentClasses.Comment;
 import org.nomadly.backend.model.PhotosClasses.UserProfilePhoto;
 import org.nomadly.backend.model.PostClasses.QuestionPost;
 import org.nomadly.backend.model.PostClasses.SocialMediaPost;
