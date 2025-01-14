@@ -1,11 +1,10 @@
 package org.nomadly.backend.auth;
 
-import com.journalistjunction.model.User;
-import com.journalistjunction.repository.UserRepository;
 import jakarta.persistence.EntityExistsException;
 import lombok.RequiredArgsConstructor;
 import org.nomadly.backend.enums.Role;
 import org.nomadly.backend.model.User;
+import org.nomadly.backend.repository.UserRepository;
 import org.nomadly.backend.security.JwtService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -17,13 +16,13 @@ import org.springframework.stereotype.Service;
 public class AuthenticationService {
 
     private final JwtService jwtService;
-    private final UserRepository repository;
+    private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
 
     public AuthenticationResponse register(RegisterRequest request) {
 
-        if (repository.findByEmailIgnoreCase(request.getEmail()) == null && repository.findByNameIgnoreCase(request.getName()) == null) {
+        if (userRepository.findByEmailIgnoreCase(request.getEmail()) == null && userRepository.findByNameIgnoreCase(request.getName()) == null) {
             var user = User.builder()
                     .role(Role.USER)
                     .name(request.getName())
@@ -34,7 +33,7 @@ public class AuthenticationService {
                     .currentlyIn(request.getCurrentlyIn())
                     .shortAutoDescription(request.getShortAutoDescription())
                     .build();
-            repository.save(user);
+            userRepository.save(user);
 
             var jwtToken = jwtService.generateToken(user);
             return AuthenticationResponse.builder().token(jwtToken).build();
@@ -50,7 +49,7 @@ public class AuthenticationService {
                         request.getPassword()
                 )
         );
-        var user = repository.findByEmailIgnoreCase(request.getEmail());
+        var user = userRepository.findByEmailIgnoreCase(request.getEmail());
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder().token(jwtToken).build();
     }

@@ -7,8 +7,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.nomadly.backend.model.PostClasses.SocialMediaPost;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

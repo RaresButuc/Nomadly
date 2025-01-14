@@ -9,8 +9,7 @@ import org.nomadly.backend.model.PostClasses.QuestionPost;
 
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

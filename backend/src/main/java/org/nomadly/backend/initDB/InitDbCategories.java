@@ -1,9 +1,8 @@
 package org.nomadly.backend.initDB;
 
-import com.journalistjunction.model.Category;
-import com.journalistjunction.repository.CategoryRepository;
 import lombok.AllArgsConstructor;
 import org.nomadly.backend.model.Category;
+import org.nomadly.backend.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,9 +24,9 @@ public class InitDbCategories {
                 Category.builder().nameOfCategory("shopping_and_markets").build(),
                 Category.builder().nameOfCategory("nightlife").build(),
                 Category.builder().nameOfCategory("local_cuisine").build(),
-                Category.builder().nameOfCategory("accommodation").build()
+                Category.builder().nameOfCategory("accommodation").build(),
+                Category.builder().nameOfCategory("social_media").build()
         );
-
 
         categoryRepository.saveAllAndFlush(categories);
     }

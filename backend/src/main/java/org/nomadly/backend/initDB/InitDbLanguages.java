@@ -1,8 +1,8 @@
 package org.nomadly.backend.initDB;
 
-import com.journalistjunction.model.Language;
-import com.journalistjunction.repository.LanguageRepository;
 import lombok.AllArgsConstructor;
+import org.nomadly.backend.model.Language;
+import org.nomadly.backend.repository.LanguageRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

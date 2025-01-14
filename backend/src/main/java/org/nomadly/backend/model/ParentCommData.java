@@ -3,8 +3,7 @@ package org.nomadly.backend.model;
 import jakarta.persistence.Embeddable;
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

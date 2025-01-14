@@ -5,7 +5,6 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.nomadly.backend.model.Comment;
 import org.nomadly.backend.model.Location;
-import org.nomadly.backend.model.PhotosClasses.QuestionPostPhoto;
 import org.nomadly.backend.model.PhotosClasses.SocialMediaPhoto;
 import org.nomadly.backend.model.User;
 
@@ -31,8 +30,9 @@ public class SocialMediaPost extends Post {
     private List<SocialMediaPhoto> photos;
 
     public SocialMediaPost(String title, String body, LocalDateTime postTime, Location location, User owner,
-                           List<QuestionPostPhoto> photos, List<Comment> comments, Long commentsCount) {
-        super(title, body, postTime, location, owner, photos, comments, commentsCount);
+                           List<SocialMediaPhoto> photos, List<Comment> comments, Long commentsCount) {
+        super(body, postTime, location, owner, comments, commentsCount);
+        this.photos = photos;
     }
 
 }

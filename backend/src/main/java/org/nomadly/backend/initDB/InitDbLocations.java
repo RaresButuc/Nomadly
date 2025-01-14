@@ -2,9 +2,9 @@ package org.nomadly.backend.initDB;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.journalistjunction.model.Location;
-import com.journalistjunction.repository.LocationRepository;
 import lombok.AllArgsConstructor;
+import org.nomadly.backend.model.Location;
+import org.nomadly.backend.repository.LocationRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

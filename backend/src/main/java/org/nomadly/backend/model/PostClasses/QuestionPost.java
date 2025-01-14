@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.nomadly.backend.model.*;
-import org.nomadly.backend.model.PhotosClasses.QuestionPostPhoto;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -23,6 +22,8 @@ public class QuestionPost extends Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String title;
+
     @ManyToMany
     @JoinTable
     @Size(min = 1, max = 10)
@@ -32,14 +33,9 @@ public class QuestionPost extends Post {
     @JoinColumn
     private Language language;
 
-    @OneToMany
-    @Size(max = 10)
-    private List<QuestionPostPhoto> photos;
-
-    public QuestionPost(String title, String body, LocalDateTime postTime, Location location, User owner,
-                        List<QuestionPostPhoto> photos, List<Comment> comments, Long commentsCount,
-                        List<Category> categories, Language language) {
-        super(title, body, postTime, location, owner, photos, comments, commentsCount);
+    public QuestionPost(String body, LocalDateTime postTime, Location location, User owner, List<Comment> comments,
+                        Long commentsCount, List<Category> categories, Language language) {
+        super(body, postTime, location, owner, comments, commentsCount);
         this.categories = categories;
         this.language = language;
     }

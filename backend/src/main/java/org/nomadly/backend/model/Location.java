@@ -10,8 +10,7 @@ import org.nomadly.backend.model.PostClasses.SocialMediaPost;
 
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
