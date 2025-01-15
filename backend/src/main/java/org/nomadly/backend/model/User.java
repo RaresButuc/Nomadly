@@ -1,12 +1,18 @@
 package org.nomadly.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.nomadly.backend.enums.Role;
-import org.nomadly.backend.model.CommentClasses.Comment;
+import org.nomadly.backend.model.CommentClasses.QuestionPostComment;
+import org.nomadly.backend.model.CommentClasses.SocialMediaComment;
 import org.nomadly.backend.model.PhotosClasses.UserProfilePhoto;
 import org.nomadly.backend.model.PostClasses.QuestionPost;
 import org.nomadly.backend.model.PostClasses.SocialMediaPost;
@@ -57,6 +63,14 @@ public class User implements UserDetails {
 
     @NotNull
     @NotBlank
+    @ManyToMany
+    @JoinColumn
+    private List<Location> visitedLocations;
+
+    private boolean visitedLocationsVisibility;
+
+    @NotNull
+    @NotBlank
     @ManyToOne
     @JoinColumn
     private Location currentlyIn;
@@ -77,20 +91,35 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
     private List<QuestionPost> questionPosts;
 
-    @JsonIgnore
-    @OneToMany
+    @ManyToMany
+    @JsonManagedReference
     private List<User> friends;
+
+    @ManyToMany(mappedBy = "friends")
+    @JsonBackReference
+    private List<User> friendOf;
+
+    @ManyToMany(mappedBy = "subscribedUsers")
+    private List<Location> preferences;
 
     @OneToMany(mappedBy = "to", fetch = FetchType.EAGER)
     private List<Notification> notifications;
 
     @JsonIgnore
     @OneToMany(mappedBy = "user")
-    private List<Comment> comments;
+    private List<SocialMediaComment> socialMediaComments;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<QuestionPostComment> questionPostComments;
 
     @JsonIgnore
     @ManyToMany
-    private List<Comment> likedComments;
+    private List<SocialMediaComment> likedSocialMediaComments;
+
+    @JsonIgnore
+    @ManyToMany
+    private List<QuestionPostComment> likedQuestionPostComments;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
