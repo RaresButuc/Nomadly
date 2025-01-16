@@ -38,11 +38,12 @@ public class QuestionPost extends Post {
     @OneToMany(mappedBy = "post")
     private List<QuestionPostComment> comments;
 
-    public QuestionPost(String body, LocalDateTime postTime, Location location, User owner, List<Comment> comments,
+    public QuestionPost(String body, LocalDateTime postTime, Location location, User owner, List<QuestionPostComment> comments,
                         Long commentsCount, List<Category> categories, Language language) {
         super(body, postTime, location, owner, commentsCount);
         this.categories = categories;
         this.language = language;
+        this.comments = comments;
     }
 
 }

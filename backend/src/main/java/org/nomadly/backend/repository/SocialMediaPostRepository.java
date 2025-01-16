@@ -4,11 +4,13 @@ import org.nomadly.backend.model.PostClasses.SocialMediaPost;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface SocialMediaPostRepository extends JpaRepository<SocialMediaPost, Long> {
 
-//    List<Article> findAllByOwnerIdOrderByPostTimeDesc(Long id);
-//
+    List<SocialMediaPost> findAllByOwnerIdOrderByPostTimeDesc(Long id);
+
 //    List<Article> findAllByContributorsIdOrderByPostTimeDesc(Long id);
 //
 //    List<Article> findAllByPublishedIsTrueAndLocation_CountryOrderByPostTimeDesc(String country);
