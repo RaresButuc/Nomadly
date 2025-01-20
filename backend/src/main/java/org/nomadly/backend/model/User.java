@@ -67,7 +67,7 @@ public class User implements UserDetails {
     @JoinColumn
     private List<Location> visitedLocations;
 
-    private boolean visitedLocationsVisibility;
+    private boolean profileVisibility;
 
     @NotNull
     @NotBlank
