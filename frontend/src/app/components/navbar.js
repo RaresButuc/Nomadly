@@ -27,7 +27,7 @@ export default function Navbar() {
               <a
                 className="nav-link active mx-3"
                 aria-current="page"
-                href="#"
+                href="/"
                 style={{ color: "white" }}
               >
                 <b>HOME</b>
@@ -36,14 +36,18 @@ export default function Navbar() {
             <li className="nav-item">
               <a
                 className="nav-link active mx-3"
-                href="#"
+                href="/explore"
                 style={{ color: "white" }}
               >
                 <b>FIND A DESTINATION</b>
               </a>
             </li>
             <li className="nav-item navbar-join-button">
-              <a className="btn btn-warning" href="#" style={{color:"white"}}>
+              <a
+                className="btn btn-warning"
+                href="/register"
+                style={{ color: "white" }}
+              >
                 <b>JOIN US</b>
               </a>
             </li>

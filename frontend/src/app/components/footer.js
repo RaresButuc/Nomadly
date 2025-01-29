@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <div className="container-xl">
-      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top border-warning">
+      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top border-white">
         <div className="col-md-4 d-flex align-items-center">
           <a
             href="/"
@@ -14,7 +14,7 @@ export default function Footer() {
               style={{ width: 155 }}
             />{" "}
           </a>
-          <span className="mb-3 mb-md-0 text-white">
+          <span className="mb-3 mb-md-0 text-warning">
             &copy; 2023 Company, Inc
           </span>
         </div>
