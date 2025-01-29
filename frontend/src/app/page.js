@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
@@ -16,27 +17,28 @@ export default function Home() {
             muted
             style={{ width: "100%" }}
           />
-          <h1 className="fw-bold" style={{ color: "white" }}>
+          <h1 className="fw-bold display-4" style={{ color: "white" }}>
             Your Journey, <mark>Shared</mark>. Your World, <mark>Expanded</mark>
             .
           </h1>
           <div className="d-flex justify-content-center">
             <h5 className="fw-bold mb-3 lh-base" style={{ color: "white" }}>
-              A platform where <mark>travel</mark> and <mark>social media</mark>{" "}
+              A platform where <mark>Travel</mark> and <mark>Social Media</mark>
               meet to create authentic experiences.
             </h5>
           </div>
-
           <div className="container-xl d-flex justify-content-center">
             <a
               className="btn btn-outline-warning fw-bold p-3"
               href="/post-ads"
               style={{ color: "white" }}
             >
-              Start Your Jorney HERE
+              Start Your Journey HERE
             </a>
           </div>
         </main>
+        <div style={{ marginTop: 'auto' }}></div>
+        <Footer />
       </div>
     </>
   );
