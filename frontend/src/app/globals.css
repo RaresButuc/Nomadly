@@ -32,12 +32,12 @@ body {
   height: 100vh;
   object-fit: cover;
   z-index: -1;
-  filter: brightness(0.5);
+  filter: brightness(0.4);
 }
 
 .navbar-custom {
   text-align: start;
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: rgba(0, 0, 0, 0.45);
 }
 
 .navbar-join-button {
