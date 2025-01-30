@@ -1,9 +1,6 @@
 import styles from "./page.module.css";
 
-import Navbar from "./components/navbar";
-import Footer from "./components/footer";
-
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <div className={styles.page}>

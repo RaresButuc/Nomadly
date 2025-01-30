@@ -9,7 +9,7 @@ export default function Footer() {
         transform: "translateX(-50%)",
       }}
     >
-      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-2 border-top border-white">
+      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-2 border-top border-warning-subtle">
         <div className="col-md-4 d-flex align-items-center">
           <a
             href="/"

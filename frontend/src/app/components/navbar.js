@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-custom fixed-top border-bottom navbar-expand-lg">
+    <nav className="navbar navbar-custom fixed-top border-bottom border-warning-subtle navbar-expand-lg">
       <div className="container-xl">
         <a className="navbar-brand" href="/">
           <img
