@@ -1,5 +1,7 @@
 import EmailInput from "../components/form-components/Email-input";
 import UsernameInput from "../components/form-components/Username-input";
+import PasswordInput from "../components/form-components/Password-input";
+import PhoneNumberInput from "../components/form-components/PhoneNumber-input";
 
 export default function RegisterPage() {
   return (
@@ -30,23 +32,15 @@ export default function RegisterPage() {
                     />
                   </div>
 
-                  {/* <div className="form-outline mb-4 mt-5">
-                    <PasswordInput
-                      user={null}
-                      ref={null}
-                      id={"floatingPasswordValue"}
-                    />
+                  <div className="form-outline mb-4">
+                    <PasswordInput id={"floatingPasswordValue"} />
                   </div>
 
-                  <div className="form-outline mb-4 mt-5">
-                    <PhoneNumberInput
-                      user={null}
-                      ref={null}
-                      id={"floatingPhoneNumberValue"}
-                    />
+                  <div className="form-outline mb-4">
+                    <PhoneNumberInput id={"floatingPhoneNumberValue"} />
                   </div>
 
-                  <div className="form-outline mb-4 mt-5">
+                  {/*<div className="form-outline mb-4 mt-5">
                     <CountrySelect
                       user={null}
                       ref={null}
@@ -88,7 +82,10 @@ export default function RegisterPage() {
                 </div>
               </div>
               <p className="mt-4 d-flex justify-content-center">
-                Already a member?<a href="/login" className="text-warning">Log In HERE</a>
+                Already a member?
+                <a href="/login" className="text-warning">
+                  Log In HERE
+                </a>
               </p>
             </div>
           </div>
