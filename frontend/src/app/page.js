@@ -6,7 +6,6 @@ import Footer from "./components/footer";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <div className={styles.page}>
         <main className={styles.main}>
           <video
@@ -48,8 +47,6 @@ export default function Home() {
             </div>
           </div>
         </main>
-        <div style={{ marginTop: "auto" }}></div>
-        <Footer />
       </div>
     </>
   );
