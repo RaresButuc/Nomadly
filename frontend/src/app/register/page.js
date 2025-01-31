@@ -2,6 +2,8 @@ import EmailInput from "../components/form-components/Email-input";
 import UsernameInput from "../components/form-components/Username-input";
 import PasswordInput from "../components/form-components/Password-input";
 import PhoneNumberInput from "../components/form-components/PhoneNumber-input";
+import ProfileImageInput from "../components/form-components/ProfileImage-Input";
+import ProfileBackgroundImageInput from "../components/form-components/ProfileBackgroundImage-Input";
 
 export default function RegisterPage() {
   return (
@@ -46,32 +48,19 @@ export default function RegisterPage() {
                       ref={null}
                       id={"floatingCountryValue"}
                     />
-                  </div>
-
-                  <div className="form-outline mb-4 mt-5">
-                    <ShortDescriptionInput
-                      user={null}
-                      ref={null}
-                      id={"floatingShortDescriptionValue"}
-                    />
-                  </div>
+                  </div> */}
 
                   <div className="form-outline mb-5 mt-5">
                     <h4>Profile Picture</h4>
-                    <ProfileImageInput ref={photoRef} />
+                    <ProfileImageInput  />
                   </div>
 
                   <div className="form-outline mb-5 mt-5">
                     <h4>Background Picture</h4>
-                    <ProfileBackgroundImageInput ref={photoBackgroundRef} />
+                    <ProfileBackgroundImageInput  />
                   </div>
 
-                  <div className="form-outline mb-5 mt-5">
-                    <h4>Social Media</h4>
-                    <SocialMediaInput ref={instagram} platform={"instagram"} />
-                    <SocialMediaInput ref={facebook} platform={"facebook"} />
-                    <SocialMediaInput ref={x} platform={"x"} />
-                  </div>*/}
+                 
 
                   <button
                     className="btn btn-primary btn-lg btn-block"

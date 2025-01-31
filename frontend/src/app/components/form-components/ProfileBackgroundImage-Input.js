@@ -3,14 +3,14 @@
 import axios from "axios";
 import CropEasy from "../CropEasy";
 import { useDropzone } from "react-dropzone";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { useMemo, useCallback, useState, useEffect, forwardRef } from "react";
 
 import DefaultURL from "@/app/usefull/DefaulURL";
 import CurrentUserInfos from "@/app/usefull/CurrentUserInfos";
 
 const ProfileBackgroundImageInput = forwardRef(({ userId }, ref) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const currentUser = CurrentUserInfos();
 
   const [width, setWidth] = useState(null);
@@ -57,7 +57,7 @@ const ProfileBackgroundImageInput = forwardRef(({ userId }, ref) => {
               : "Current Profile Background Image"
           );
         } catch (err) {
-          navigate("an-eror-has-occurred");
+          router.push("an-eror-has-occurred");
         }
       };
 

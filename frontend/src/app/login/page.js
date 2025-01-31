@@ -11,7 +11,7 @@ import PasswordInput from "../components/form-components/Password-input";
 
 export default function LoginPage() {
   const signIn = useSignIn();
-  const navigate = useRouter();
+  const router = useRouter();
 
   const [showAlert, setShowAlert] = useState(false);
   const [alertInfos, setAlertInfos] = useState(["", "", ""]);
